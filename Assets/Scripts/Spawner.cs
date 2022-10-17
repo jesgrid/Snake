@@ -27,7 +27,7 @@ public class Spawner : MonoBehaviour
         Trace.transform.localScale = new Vector3(2, 1, WallLines * 4);
         Finish.transform.position = new Vector3(0, 0, 30 * (WallLines + 1));
 
-        if(0 <= PlayerPrefs.GetInt("savedlevel", 0))
+        if(0 >= PlayerPrefs.GetInt("savedlevel", 0))
         {
             WallPosinionsGennerate();
             FoodPosinionsGennerate();
@@ -39,6 +39,7 @@ public class Spawner : MonoBehaviour
             WallPosinionsSpawn();
             FoodPosinionsSpawn();
             ResetPlayerPosinion();
+            PlayerPrefs.SetInt("savedlevel", 0);
         }
     }
 

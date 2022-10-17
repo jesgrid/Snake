@@ -9,7 +9,7 @@ public class Controls : MonoBehaviour
     private float Angle;
     void Update()
     {
-        Rigidbody.velocity = new Vector3 (Angle * 100, 0, SpeedForward * 100 * Time.deltaTime);
+        Rigidbody.velocity = new Vector3 (Angle * 100, 0, SpeedForward);
 
         if (Input.GetKeyDown(KeyCode.A))
         {

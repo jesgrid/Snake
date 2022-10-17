@@ -7,6 +7,12 @@ public class Player : MonoBehaviour
     public int Food;
     public PlayerBody BodyPart;
     public List<PlayerBody> BodyParts;
+    private void Awake()
+    {
+        BodyParts.Add(Instantiate(BodyPart));
+        BodyParts.Last().PartIndex = BodyParts.Count;
+        BodyParts.Last().Player = this;
+    }
     private void Update()
     {
         if (Food > 0)

@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Rigidbody: {fileID: 8594045971550004039}
-  SpeedForward: 68
+  SpeedForward: 19
   AngleMultiplier: 0.17
 --- !u!114 &8939051054588774004
 MonoBehaviour:
