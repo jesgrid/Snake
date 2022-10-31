@@ -6,6 +6,8 @@ public class Food : MonoBehaviour
     public int FoodHave;
     private System.Random rnd = new();
 
+    public AudioClip FoodClip;
+
     public TextMeshProUGUI Text;
     private void Update()
     {
@@ -15,6 +17,7 @@ public class Food : MonoBehaviour
     {
         if (other.TryGetComponent(out Player player))
         {
+            AudioSource.PlayClipAtPoint(FoodClip, transform.position);
             player.Food += FoodHave;
             Destroy(this.gameObject);
         }

@@ -5,7 +5,9 @@ public class Wall : MonoBehaviour
 {
     public int HP;
     public TextMeshProUGUI Text;
-    void Update()
+
+    public AudioClip Drill;
+       void Update()
     {
         Text.text = HP.ToString();
     }
@@ -15,12 +17,13 @@ public class Wall : MonoBehaviour
         {
             if (HP <= 0)
             {
-                Destroy(this.gameObject);
+                    Destroy(gameObject);
             }
             else
             {
                 HP--;
                 player.Food--;
+                AudioSource.PlayClipAtPoint(Drill, transform.position);
             }
         }
     }

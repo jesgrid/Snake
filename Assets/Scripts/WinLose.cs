@@ -7,14 +7,14 @@ public class WinLose : MonoBehaviour
     public Canvas LoseScreen;
     public Canvas WinScreen;
     public Finish Finish;
-    void Update()
+    private void FixedUpdate()
     {
-        if(Player.BodyParts.Count == 0)
+        if (Player.BodyParts.Count == 0)
         {
             Controls.enabled = false;
             LoseScreen.gameObject.SetActive(true);
         }
-        if(Finish.Finished == true)
+        if (Finish.Finished == true)
         {
             Controls.enabled = false;
             WinScreen.gameObject.SetActive(true);
